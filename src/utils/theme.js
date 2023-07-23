@@ -13,4 +13,13 @@ export const theme = createTheme({
         main:"#000000"
       }
     },
+    components: {
+        MuiContainer: {
+          styleOverrides: {
+            maxWidthLg: {
+              maxWidth: '1700px !important',
+            },
+          },
+        },
+      },
   });
