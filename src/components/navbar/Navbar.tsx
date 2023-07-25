@@ -1,6 +1,6 @@
 // import styled from "@emotion/styled";
 
-import { Box, Button, InputBase, Stack, Typography } from "@mui/material";
+import { Box, Button, InputBase, Stack, Typography, useMediaQuery } from "@mui/material";
 import { alpha, styled, useTheme } from "@mui/material/styles";
 import  React, { useRef, useState } from "react";
 import SearchIcon from '@mui/icons-material/Search';
@@ -16,6 +16,8 @@ import Menudrop from "../Menudrop";
 
 function Navbar() {
   const theme=useTheme()
+  // const theme = useTheme();
+  const matches = useMediaQuery(theme.breakpoints.up('sm'));
   const [open,setOpen]=useState<Boolean>(false)
   const buttontouch :React.MutableRefObject<any>= useRef()
   const Search = styled('div')(({ theme }) => ({
@@ -58,7 +60,7 @@ function Navbar() {
 
   return (
   <Box sx={{
-    backgroundColor:theme.palette.primary.main,height:"81px",
+    backgroundColor:theme.palette.primary.main,
     padding:"20px",
     boxSizing:"border-box"
   }}>
@@ -81,14 +83,20 @@ function Navbar() {
             />
           </Search>
           <Stack direction={"row"} justifyContent={"space-between"}sx={{width:"25%"}} >
-          <Box sx={stylenav}>
+          <Box sx={Object.assign(stylenav,{img:{
+            margin:"10px"
+          }})}>
             <img src={img} alt=""/>
           </Box>
           <Box sx={Object.assign(stylenav,{position:"relation"})}>
             
-            <Box sx={Object.assign(stylenav,{color:theme.palette.primary.light,cursor:"pointer"})} onClick={()=>{setOpen(!open)}} ref={buttontouch}>
+            <Box sx={Object.assign(stylenav,{color:theme.palette.primary.light,cursor:"pointer",img:{
+              margin:"10px"
+            }})} onClick={()=>{setOpen(!open)}} ref={buttontouch}>
             <img src={user} alt="" onClick={()=>buttontouch.current.click()}/>
-              Register
+            {/* {`theme.breakpoints.up('sm') matches: ${matches}`} */}
+            {matches?"Register":""}
+              
             </Box>
         
             <Menudrop open={open}>
@@ -110,8 +118,9 @@ function Navbar() {
             </Box>
             <Box sx={stylenav}>
               <img src={phoneimage} alt={"phoneimage"}/>
-              <a>
-              + 1 (708) 770 - 4845</a>
+              {matches?<a>
+              + 1 (708) 770 - 4845</a>:""}
+              
             </Box>
           </Stack>
     </Stack>
