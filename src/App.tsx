@@ -5,18 +5,16 @@ import Login from "./pages/Login";
 import Home from "./pages/Home";
 import React from "react";
 import LinkNav from "./components/navbar/LinkNav";
+import Shop from "./pages/Shop";
 
 function App() {
   return (
     <>
       <BrowserRouter>
-      <Navbar />
-      <LinkNav/>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/home" element={<Home/>}/>
-            
           <Route path="/login" element={<Login />} />
+          <Route path="/shop" element={<Shop />} />
         </Routes>
       </BrowserRouter>
     </>
