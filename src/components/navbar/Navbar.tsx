@@ -17,7 +17,7 @@ import Menudrop from "../Menudrop";
 function Navbar() {
   const theme=useTheme()
   // const theme = useTheme();
-  const matches = useMediaQuery(theme.breakpoints.up('sm'));
+  const matches = useMediaQuery(theme.breakpoints.up('md'));
   const [open,setOpen]=useState<Boolean>(false)
   const buttontouch :React.MutableRefObject<any>= useRef()
   const Search = styled('div')(({ theme }) => ({

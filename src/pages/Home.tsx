@@ -8,6 +8,7 @@ import Featured from "../components/home/Featured";
 import NewSletter from "../components/home/NewSletter";
 import Footer from "../components/layout/Footer";
 import Layout from "../components/layout/Layout";
+import Reviewcandy from "../components/review/Reviewcandy";
 
 function Home() {
   return (
@@ -18,6 +19,7 @@ function Home() {
       <LandingPage />
       <Services />
       <Featured />
+      <Reviewcandy/>
     </Layout>
     </>
   );

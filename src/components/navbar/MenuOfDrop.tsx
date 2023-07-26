@@ -55,12 +55,12 @@ function MenuOfDrop({name,objectData}:propsmenu) {
     },".MuiMenuItem-root":{
       width:"150px"
     },".MuiMenu-paper":{
-      minWidth: "50%",
+      minWidth: "60%",
       padding: "15px",
     }}}
   >
-{Object.keys(objectData).map((ele)=>{
-      return <Box sx={{color:"#90B400",width:"20%",padding:"20px"}}> {ele}
+{Object.keys(objectData).map((ele,key)=>{
+      return <Box sx={{color:"#90B400",padding:"20px"}} key={key}> {ele}
        
        {objectData[ele].map((elem:any)=>{
         return <MenuItem onClick={handleClose} sx={{color:"black",fontWeight:"500",width:"25%"}}>{elem.title}</MenuItem>
@@ -68,7 +68,7 @@ function MenuOfDrop({name,objectData}:propsmenu) {
        </Box>
 
 })}
-  <Box sx={{position:"relative",height:"100%",marginRight:"30%"}}>
+  <Box sx={{position:"relative",height:"100%",    width: "35%"}}>
     {imagenuts.map((ele,i)=><img src={ele} style={{position:"absolute",top:`${70*i}px`,left:`${30*i>=90?0:30*i}px`,right:`${30*i>=90?30*i:0}px`}}/>)}
   </Box>
   </Menu>:name.includes("TURKISH DELIGHTS")?<Menu
@@ -89,13 +89,13 @@ function MenuOfDrop({name,objectData}:propsmenu) {
     },".MuiMenuItem-root":{
       width:"50%"
     },".MuiMenu-paper":{
-      minWidth: "28%",
+      maxWidth: "80%",
       left:"58px !important",
       padding: "15px",
     }}}
   >
-{Object.keys(objectData).map((ele)=>{
-      return <Box sx={{color:"#90B400",width:"29%",padding:"20px"}}> {ele}
+{Object.keys(objectData).map((ele,key )=>{
+      return <Box sx={{color:"#90B400",padding:"20px"}}key={key}> {ele}
        
        {objectData[ele].map((elem:any)=>{
         return <MenuItem onClick={handleClose} sx={{color:"black",fontWeight:"500",width:"25%"}}>{elem.title}</MenuItem>
@@ -132,8 +132,8 @@ function MenuOfDrop({name,objectData}:propsmenu) {
      padding: "15px",
     }}}
   >
-{Object.keys(objectData).map((ele)=>{
-      return <Box sx={{color:"#90B400",width:"29%",padding:"20px"}}> {ele}
+{Object.keys(objectData).map((ele,key)=>{
+      return <Box sx={{color:"#90B400",padding:"20px"}} key={key}> {ele}
        
        {objectData[ele].map((elem:any)=>{
         return <MenuItem onClick={handleClose} sx={{color:"black",fontWeight:"500",width:"25%"}}>{elem.title}</MenuItem>

@@ -6,16 +6,18 @@ import Home from "./pages/Home";
 import React from "react";
 import LinkNav from "./components/navbar/LinkNav";
 import Shop from "./pages/Shop";
-
+import { AnimatePresence } from "framer-motion";
 function App() {
   return (
     <>
       <BrowserRouter>
+      <AnimatePresence initial={false}>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
           <Route path="/shop" element={<Shop />} />
         </Routes>
+        </AnimatePresence>
       </BrowserRouter>
     </>
   );

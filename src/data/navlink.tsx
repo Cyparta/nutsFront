@@ -7,6 +7,8 @@ import imagenuts5 from "../../src/assets/nuts/Ellipse13.png"
 import imagenuts6 from "../../src/assets/nuts/Ellipse14.png"
 import imagenuts7 from "../../src/assets/nuts/Ellipse15.png"
 import imagenuts8 from "../../src/assets/nuts/Ellipse16.png"
+import imagenuts9 from "../../src/assets/nuts/Ellipse4.png"
+import imagenuts10 from "../../src/assets/nuts/Ellipse5.png"
 
 export let linknave = [{
     name: "Home",
@@ -68,3 +70,21 @@ export const  chocolates = { "CHOCOLATES": [{ title: "Milk Chocolate", name: "Mi
 export const imagechocolates=[
     imagenuts8
 ]
+export const detailofimgnut=[{id:0,image:imagenuts1,detail:`Gummy candies are made mostly of corn syrup, sucrose, gelatin, starch 
+and water. In addition, minor amounts of coloring and flavoring agents are used. 
+Food acids such as citric acid and malic acid are also added in order to give a tart 
+flavor to gummies. It is often that other gelling agents are used in place of gelatin 
+to make gummy candies suitable for vegans or vegetarians, such as starch and pectin`,title:"candy"},{id:1,image:imagenuts9,detail:`milk chocolate lovers to enjoy an irresistible combination of textures and flavours.
+An indulgent sensation of a velvety filling with crunchy hazelnut pieces and fine
+Californian Almond inclusions, softly wrapped within smooth milk chocolate layers.`,title:"Milk Chocolate Almonds And Hazelnut"},{id:2,image:imagenuts3,detail:`nut is a fruit consisting of a hard or tough nutshell protecting a kernel which
+is usually edible. In general usage and in a culinary sense, a wide variety of
+dry seeds are called nuts, but in a botanical context "nut" implies that the
+shell does not open to`,title:"Nuts"},{id:3,image:imagenuts10,detail:`Our exclusive quality chopped Salted Mixed Nuts without seeds are exceptional
+having almonds, walnuts, hazelnuts, cashews, peanuts but do not contain seeds.
+These mix nuts are one of the essential ingredients of many baking and cooking
+recipes. They can also be used as snacks. Our Mixed Nuts are packed with Dietary
+Fiber and protein which is beneficial for health.`,title:"Super Mix With Seeds And Peanuts"},{id:4,image:imagenuts4,detail:`Known in hindi as "Aroo" dried peaches, are obtained by cutting and slicing
+the fully riped peaches, and then dehydrating them to suck their moisture
+and enhance their shelf life. Dried peaches are moist, delicious, and full of 
+potassium. Dried peaches are rich in beta-carotene, which is a powerful member
+of the antioxidant family.`,title:"Dried Peach"}]
