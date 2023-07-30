@@ -1,0 +1,39 @@
+/* custom select */
+.selected-option {
+    /* width: 100%; */
+    padding: 5px 8px 5px 25px;
+    border: 1px solid #777575;
+    outline: none;
+    border-radius: 5px;
+    height: 50px;
+    font-size: 16px;
+    color: #252324;
+    font-weight: 400;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    color:#C3C3C3;
+    font-size:14px
+  }
+  .options {
+    list-style: none;
+    background-color: #fff;
+    box-shadow: 0px 10px 30px rgba(200, 200, 200, 0.28);
+    border-radius: "4px";
+    position: absolute;
+    width: 100%;
+    z-index: 8;
+    cursor: pointer;
+    margin-top: 10px;
+    height: 196px;
+    overflow-y: scroll;
+    padding:0
+  }
+  .options li {
+    padding: 15px 15px;
+  }
+  
+  .options li:hover {
+    background-color: #ddd;
+  }

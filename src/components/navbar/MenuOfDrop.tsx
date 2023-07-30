@@ -5,7 +5,6 @@ import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import Menudrop from '../Menudrop';
 import { stylelistclass } from '../../style/navbar';
 import { imagechocolates, imagenuts, imageturkeish } from '../../data/navlink';
-import { padEnd } from 'lodash';
 
 interface propsmenu{
     name:string,onClick?:()=>{},objectData:any

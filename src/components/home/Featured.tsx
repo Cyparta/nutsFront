@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useRef} from "react";
 import { Container, Box, Typography, Grid } from "@mui/material";
 import { MainButton, MainButtonHvr } from "../../style/style";
 import { useTheme } from "@mui/material/styles";
@@ -6,22 +6,60 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import featureImage from "../../assets/home/featured-1.png";
-import basketImage from '../../assets/basket.png'
+import basketImage from "../../assets/basket.png";
 import ProductCard from "../common/ProductCard";
+import { useHref } from "react-router-dom";
+import NavigateNextIcon from "@mui/icons-material/NavigateNext";
+import NavigateBeforeIcon from "@mui/icons-material/NavigateBefore";
+import '../../style/feature.css'
+import {BsArrowRight} from 'react-icons/bs'
+
 
 const Featured = () => {
   const theme = useTheme();
   const { status } = theme;
 
+  const arrowRef = useRef<Slider>(null);
+
+  const handlePrevClick = (): void => {
+    if (arrowRef.current !== null) {
+      arrowRef.current.slickPrev();
+    }
+  };
+
+  const handleNextClick = (): void => {
+    if (arrowRef.current !== null) {
+      arrowRef.current.slickNext();
+    }
+  };
+
   const settings = {
-    className: "center",
-    centerMode: true,
-    infinite: true,
-    centerPadding: "60px",
-    slidesToShow: 6,
-    slidesPerRow: 6,
+    className:"feature",
     speed: 500,
-    rows: 2,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    rows:2,
+    infinite: false,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 3,
+        },
+      },
+      {
+        breakpoint: 650,
+        settings: {
+          slidesToShow: 2,
+        },
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+        },
+      },
+    ]
   };
   return (
     <Container>
@@ -30,6 +68,7 @@ const Featured = () => {
           display: "flex",
           justifyContent: "space-between",
           alignItems: "center",
+          mb:"95px"
         }}
       >
         <Typography
@@ -78,7 +117,7 @@ const Featured = () => {
           </MainButton>
         </Box>
       </Box>
-      <Box sx={{ mt: "95px" }}>
+      {/* <Box sx={{ mt: "95px" }}>
         <Grid container spacing={4}>
           
           <Grid item xs={12} sm={6} md={3}>
@@ -102,7 +141,74 @@ const Featured = () => {
           </Grid>
 
         </Grid>
-      </Box>
+      </Box> */}
+
+    <div className="feature">
+
+      <Slider {...settings}  ref={arrowRef}>
+        <div>
+          <ProductCard />
+        </div>
+        <div>
+          <ProductCard />
+        </div>
+        <div>
+          <ProductCard />
+        </div>
+        <div>
+          <ProductCard />
+        </div>
+        <div>
+          <ProductCard />
+        </div>
+        <div>
+          <ProductCard />
+        </div>
+        <div>
+          <ProductCard />
+        </div>
+        <div>
+          <ProductCard />
+        </div>
+        <div>
+          <ProductCard />
+        </div>
+        <div>
+          <ProductCard />
+        </div>
+        <div>
+          <ProductCard />
+        </div>
+        <div>
+          <ProductCard />
+        </div>
+        <div>
+          <ProductCard />
+        </div>
+        <div>
+          <ProductCard />
+        </div>
+        <div>
+          <ProductCard />
+        </div>
+      </Slider>
+
+      <div className="slider-arrow">
+        <button onClick={() => handlePrevClick()} className="back">
+          <NavigateBeforeIcon />
+        </button>
+        <button
+          onClick={() => {
+            if (arrowRef.current !== null) {
+              arrowRef.current.slickNext();
+            }
+          }}
+          className="next"
+        >
+          <NavigateNextIcon />
+        </button>
+      </div>
+    </div>
     </Container>
   );
 };
