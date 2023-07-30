@@ -1,23 +1,7 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800&display=swap");
 
 body {
   margin: 0;
-  /* font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif; */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-family: "Inter", sans-serif;
@@ -65,38 +49,45 @@ code {
   background-size: cover;
 }
 
-.custom-select {
-  position: relative;
+
+.slick-list {
+  margin: 0  12px;
 }
-.selected-option {
-  width: 100%;
-  padding: 8px;
-  border: 1px solid #e1e6ef;
-  outline: none;
-  border-radius: 10px;
-  height: 40px;
-  font-size: 16px;
-  color: #252324;
-  font-weight: 400;
-  background-color: #fff;
-}
-.options {
-  list-style: none;
-  background-color: #fff;
-  box-shadow: 0px 10px 30px rgba(200, 200, 200, 0.28);
-  border-radius: "4px";
-  position: absolute;
-  width: 100%;
-  z-index: 8;
-  cursor: pointer;
-  margin-top: 10px;
-  height: 196px;
-  overflow-y: scroll;
-}
-.options li {
-  padding: 15px 15px;
+.slick-slide > div {
+  padding: 0 12px;
 }
 
-.options li:hover {
-  background-color: #ddd;
+.slick-next {
+  right:30px !important;
+  width: 51px !important;
+  height: 62px !important;
+  background-color: red;
+  color:red;
+  /* background-image: url('./assets/product/arrow-next.png'); */
+  /* background-image: url('./assets/product/arrow-next.png'); */
 }
+.slick-next::before {
+  display: none;
+}
+
+.slick-dots li.slick-active button::before {
+  opacity: .75;
+    color: black;
+    content: "";
+    width: 24px;
+    height: 8px;
+    background: #6E2E02;
+    margin-top: 5px;
+    /* line-height: 36px; */
+    border-radius: 5px;
+}
+
+.slick-slide img {
+  display: inline !important;
+}
+
+
+
+
+
+

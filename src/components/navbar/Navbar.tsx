@@ -14,6 +14,8 @@ import backiconlogin from "../../assets/shapelogin.png"
 import phoneimage from "../../assets/shapephone.png"
 import Menudrop from "../Menudrop";
 
+import logo from '../../assets/logos/logo elite nuts 1.png'
+
 function Navbar() {
   const theme=useTheme()
   // const theme = useTheme();
@@ -60,8 +62,8 @@ function Navbar() {
 
   return (
   <Box sx={{
-    backgroundColor:theme.palette.primary.main,
-    padding:"20px",
+    backgroundColor:'#fff',
+    padding:"0px",
     boxSizing:"border-box"
   }}>
     <Stack direction={"row"} alignItems={"center"} justifyContent={"space-around"}spacing={2}>
@@ -71,7 +73,7 @@ function Navbar() {
             component="div"
             sx={{ display: { xs: 'none', sm: 'block' } }}
           >
-            LOGO
+            <img src={logo} alt="logo"/>
           </Typography>
           <Search>
             <SearchIconWrapper>
@@ -86,7 +88,7 @@ function Navbar() {
           <Box sx={Object.assign(stylenav,{img:{
             margin:"10px"
           }})}>
-            <img src={img} alt=""/>
+            <img src={img} alt="logo"/>
           </Box>
           <Box sx={Object.assign(stylenav,{position:"relation"})}>
             

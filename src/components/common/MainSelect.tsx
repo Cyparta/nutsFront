@@ -13,12 +13,10 @@ interface CustomSelectProps {
   handleSelect: any
 }
 
-const CustomSelect = ({ options, defaultValue, handleSelect, label }: CustomSelectProps) => {
+const MainSelect = ({ options, defaultValue, handleSelect, label }: CustomSelectProps) => {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedOption, setSelectedOption] = useState(defaultValue);
   const selectRef = useRef<HTMLDivElement>(null);
-
-//   const lang = useSelector((state: RootState) => state.lang.value.lang)
 
   const handleOptionClick = (option: string) => {
     setSelectedOption(option);
@@ -47,9 +45,6 @@ const CustomSelect = ({ options, defaultValue, handleSelect, label }: CustomSele
   return (
     <div className={`custom-select ${isOpen ? 'open' : ''}`} ref={selectRef} style={{ position: 'relative' }}>
       <div className="selected-option" onClick={toggleSelect}>
-        <span>
-          {label}
-        </span>
         {selectedOption || defaultValue}
       </div>
       <span
@@ -72,4 +67,4 @@ const CustomSelect = ({ options, defaultValue, handleSelect, label }: CustomSele
   );
 };
 
-export default CustomSelect;
+export default MainSelect;

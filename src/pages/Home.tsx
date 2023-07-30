@@ -8,17 +8,17 @@ import Featured from "../components/home/Featured";
 import NewSletter from "../components/home/NewSletter";
 import Footer from "../components/layout/Footer";
 import Layout from "../components/layout/Layout";
+import ShopSection from "../components/home/ShopSection";
 
 function Home() {
   return (
     <>
-    <Layout>
-
-      {/* <Navbar /> */}
-      <LandingPage />
-      <Services />
-      <Featured />
-    </Layout>
+      <Layout>
+        <LandingPage />
+        <Services />
+        <Featured />
+        <ShopSection />
+      </Layout>
     </>
   );
 }

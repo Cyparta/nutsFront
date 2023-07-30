@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import { Button, Box } from "@mui/material";
+import { Button, Box, TextField } from "@mui/material";
 
 // Main Button : Green Button with red hover
 export const MainButton = styled(Button)(({ theme }) => ({
@@ -61,6 +61,14 @@ export const MainCard = styled(Box)({
     padding: "23px",
 });
 
+
+export const SecondaryCard = styled(Box)(({theme}) => ({
+    background: "#F5F5F5",
+    padding: "23px",
+    borderRadius: "10px !important",
+    boxShadow: "0px 4px 4px 0px rgba(0, 0, 0, 0.10)"
+}))
+
 // special Card
 export const FruitCard = styled(Box)(({theme}) => ({
     background: "linear-gradient(222deg, rgba(205, 148, 0, 0.76) 0%, #90B400 100%)",
@@ -78,3 +86,67 @@ export const NavList = styled(Box)(({theme}) => ({
     padding:"0px",
     textTransform:"capitalize"
 }))
+/* 
+    input in login
+*/
+export const InputField = styled(TextField)({
+    width: "100%",
+    input: {
+      background: "#fff",
+      borderRadius: "4px",
+      borderBottomColor: "#90B400",
+      backgroundColor:"#fff",
+      padding:"20px 14px !important"
+      
+    },
+    "& label.Mui-focused": {
+      color: "transparent",
+    },
+    "& .MuiInput-underline:after": {
+      borderBottomColor: "#90B400",
+    },
+    "& .MuiOutlinedInput-root": {
+      // border:"1px solid transparent",
+      // borderBottomColor: "#90B400",
+  
+      "& fieldset": {
+        borderColor: "transparent",
+      },
+      "&:hover fieldset": {
+        borderColor: "transparent",
+      },
+      "&.Mui-focused fieldset": {
+        borderColor: "#90B400",
+      },
+    },
+  });
+
+  export const InputControl = styled(TextField)({
+    width: "100%",
+    input: {
+      background: "#fff",
+      borderRadius: "4px",
+      borderBottomColor: "#90B400",
+      backgroundColor:"#fff"
+    },
+    "& label.Mui-focused": {
+      color: "transparent",
+    },
+    "& .MuiInput-underline:after": {
+      borderBottomColor: "#90B400",
+    },
+    "& .MuiOutlinedInput-root": {
+      // border:"1px solid transparent",
+      // borderBottomColor: "#90B400",
+  
+      "& fieldset": {
+        borderColor: "#777575",
+      },
+      "&:hover fieldset": {
+        borderColor: "#777575",
+      },
+      "&.Mui-focused fieldset": {
+        borderColor: "#90B400",
+      },
+    },
+  });
