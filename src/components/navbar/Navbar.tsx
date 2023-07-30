@@ -4,16 +4,16 @@ import { Box, Button, InputBase, Stack, Typography, useMediaQuery } from "@mui/m
 import { alpha, styled, useTheme } from "@mui/material/styles";
 import  React, { useRef, useState } from "react";
 import SearchIcon from '@mui/icons-material/Search';
-import  img from "../../assets/image/icon_cart.png"
+import  img from "../../assets/Basket (2).png"
 import user from "../../assets/user-1.png"
 import { stylenav } from "./navbarstyle";
 import { Link } from "react-router-dom";
 
-import loginicon  from "../../assets/shape.png"
+import loginicon  from "../../assets/shapeblock.png"
 import backiconlogin from "../../assets/shapelogin.png"
-import phoneimage from "../../assets/shapephone.png"
+import phoneimage from "../../assets/shape.png"
 import Menudrop from "../Menudrop";
-
+import imagelogo from "../../assets/logos/logoelitenuts.png"
 function Navbar() {
   const theme=useTheme()
   // const theme = useTheme();
@@ -24,10 +24,10 @@ function Navbar() {
     position: 'relative',
     borderRadius: theme.shape.borderRadius,
     backgroundColor: "white",
-   
+   border:"1px solid " + theme.palette.primary.main,
     marginRight: theme.spacing(2),
     marginLeft: 0,
-    width: '45%',
+    width: '100%',
     [theme.breakpoints.up('sm')]: {
       marginLeft: theme.spacing(3),
      
@@ -60,18 +60,16 @@ function Navbar() {
 
   return (
   <Box sx={{
-    backgroundColor:theme.palette.primary.main,
+    backgroundColor:theme.palette.primary.light,
     padding:"20px",
     boxSizing:"border-box"
   }}>
-    <Stack direction={"row"} alignItems={"center"} justifyContent={"space-around"}spacing={2}>
-    <Typography
-            variant="h6"
+    <Stack direction={"row"} alignItems={"center"} justifyContent={"space-around"}>
+          <Typography
             noWrap
-            component="div"
-            sx={{ display: { xs: 'none', sm: 'block' } }}
+            component="img"
+            src={imagelogo}
           >
-            LOGO
           </Typography>
           <Search>
             <SearchIconWrapper>
@@ -82,16 +80,19 @@ function Navbar() {
               inputProps={{ 'aria-label': 'search' }}
             />
           </Search>
-          <Stack direction={"row"} justifyContent={"space-between"}sx={{width:"25%"}} >
+          <Stack direction={"row"} justifyContent={"flex-end"}sx={{width:"100%"}} >
           <Box sx={Object.assign(stylenav,{img:{
-            margin:"10px"
+            margin:"10px",display:{
+              sm:"none",md:'block'
+            }
           }})}>
             <img src={img} alt=""/>
           </Box>
           <Box sx={Object.assign(stylenav,{position:"relation"})}>
             
-            <Box sx={Object.assign(stylenav,{color:theme.palette.primary.light,cursor:"pointer",img:{
-              margin:"10px"
+            <Box sx={Object.assign(stylenav,{color:theme.palette.primary.main,cursor:"pointer",img:{
+              margin:"10px",
+             
             }})} onClick={()=>{setOpen(!open)}} ref={buttontouch}>
             <img src={user} alt="" onClick={()=>buttontouch.current.click()}/>
             {/* {`theme.breakpoints.up('sm') matches: ${matches}`} */}
@@ -99,7 +100,7 @@ function Navbar() {
               
             </Box>
         
-            <Menudrop open={open}>
+            <Menudrop open={open} >
             <Box sx={stylenav}>
             <img src={loginicon} alt=""/>
               <Link to={"login"}>

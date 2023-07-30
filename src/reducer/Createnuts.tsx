@@ -3,18 +3,16 @@ import { createSlice } from "@reduxjs/toolkit";
 export const SelectImageSlice:any = createSlice({
   name: "selectimageslice",
   initialState: {
-    value:{
-        id: 0,
-    image: "",
-    detail: "",
-    title: "",
-    }
+    value:null,
+    card:null
   },
   reducers: {
     set: (state, action) => {
-       state.value={...action.payload}
+       state.value = action.payload
     },
-  
+    dataCard:(state, action)=>{
+      state.card = action.payload
+    }
 //    addItem: (state, action) => {
 //     state.value.results = [action.payload, ...state.value.results];
 //    },

@@ -18,8 +18,9 @@ function Home() {
       {/* <Navbar /> */}
       <LandingPage />
       <Services />
-      <Featured />
       <Reviewcandy/>
+      <Featured />
+     
     </Layout>
     </>
   );

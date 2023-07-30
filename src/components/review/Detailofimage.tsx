@@ -1,5 +1,6 @@
 import { Button, Card, CardActionArea, CardActions, CardContent, CardMedia, Typography } from '@mui/material'
-import React from 'react'
+import React, { useEffect } from 'react'
+import { useDispatch } from 'react-redux';
 interface PropsDetail{
     ele:{id: number;
         image: string;
@@ -7,11 +8,16 @@ interface PropsDetail{
         title: string;}
 }
 function Detailofimage({ele}:PropsDetail) {
+  let dispatch=useDispatch()
+  useEffect(()=>{
+    dispatch({type:"selectimageslice/dataCard",payload:ele})
+  },[ele])
+ 
   return (
     <Card sx={{ maxWidth: "80%",".MuiCard-root":{
         
     },backgroundColor:"transparent",boxShadow:"none"}}>
-    <CardActionArea sx={{display:"flex",justifyContent:"center",alignItems:"center" }}>
+    <CardContent sx={{display:"flex",justifyContent:"center",alignItems:"center" }}>
       <CardMedia
         component="img"
         height="342"
@@ -30,7 +36,7 @@ function Detailofimage({ele}:PropsDetail) {
         Share
       </Button>
         </CardActions>
-    </CardActionArea>
+    </CardContent>
    
       
     
