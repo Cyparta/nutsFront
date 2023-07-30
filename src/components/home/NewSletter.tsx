@@ -10,8 +10,7 @@ const NewSletter = () => {
       sx={{
         background: status.primary,
         color: "#fff",
-
-        mt: "30px",
+        mt: "122px",
       }}
     >
       {/* <Container sx={{padding:"20px 0"}}>
@@ -59,6 +58,7 @@ const NewSletter = () => {
             alignItems:"center",
             gap:"20px",
             padding: "40px 0",
+            textAlign: {xs:"center", md:"left"}
           }}
         >
           <Box>
@@ -67,7 +67,7 @@ const NewSletter = () => {
             </Typography>
           </Box>
           <Box sx={{flex:"1"}}>
-            <Box sx={{ display: "flex", gap:"16px", justifyContent:{xs:"flex-start", md:"flex-end"}, flexWrap:"wrap" }}>
+            <Box sx={{ display: "flex", gap:"16px", justifyContent:{xs:"center", md:"flex-end"}, flexWrap:"wrap" }}>
               <input
                 type="text"
                 placeholder="Email Address"

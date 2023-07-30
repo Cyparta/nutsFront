@@ -8,6 +8,7 @@ declare module "@mui/material/styles" {
       muted: string;
       primary: string;
       footerBg:string,
+      card: string
     },
   }
   // allow configuration using `createTheme`
@@ -18,6 +19,7 @@ declare module "@mui/material/styles" {
       muted: string;
       primary: string;
       footerBg:string,
+      card:string,
     },breakpoints?:{ values: {
       xs: number;
       sm: number;
@@ -40,6 +42,7 @@ export const theme: ThemeOptions = createTheme({
     muted: "#777575",
     primary: "#90B400",
     footerBg:"#F3F3F0",
+    card:"#F3F3F0",
   },
   palette: {
     primary: {
@@ -70,3 +73,6 @@ export const theme: ThemeOptions = createTheme({
    
   }
 });
+
+
+

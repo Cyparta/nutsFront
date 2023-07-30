@@ -86,7 +86,7 @@ function Navbar() {
               sm:"none",md:'block'
             }
           }})}>
-            <img src={img} alt=""/>
+            <img src={img} alt="logo"/>
           </Box>
           <Box sx={Object.assign(stylenav,{position:"relation"})}>
             

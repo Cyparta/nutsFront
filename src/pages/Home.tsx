@@ -9,19 +9,22 @@ import NewSletter from "../components/home/NewSletter";
 import Footer from "../components/layout/Footer";
 import Layout from "../components/layout/Layout";
 import Reviewcandy from "../components/review/Reviewcandy";
+import ShopSection from "../components/home/ShopSection";
 
 function Home() {
   return (
     <>
-    <Layout>
+      <Layout>
 
-      {/* <Navbar /> */}
-      <LandingPage />
-      <Services />
-      <Reviewcandy/>
-      <Featured />
-     
-    </Layout>
+        {/* <Navbar /> */}
+        <LandingPage />
+        <Services />
+        <Reviewcandy />
+        <Featured />
+
+        <ShopSection />
+      </Layout>
+
     </>
   );
 }
