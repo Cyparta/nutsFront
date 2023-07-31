@@ -57,8 +57,11 @@ export const theme: ThemeOptions = createTheme({
     MuiContainer: {
       styleOverrides: {
         maxWidthLg: {
-          maxWidth: "95% !important",
+          maxWidth: "94% !important",
         },
+        // maxWidthXl: {
+        //   maxWidth: "1800px !important",
+        // },
       },
     },
   },

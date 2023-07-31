@@ -65,7 +65,7 @@ function Navbar() {
   return (
   <Box sx={{
     backgroundColor:theme.palette.primary.light,
-    padding:"20px",
+    padding:"20px 80px",
     boxSizing:"border-box"
   }}>
     <Stack direction={"row"} alignItems={"center"} justifyContent={"space-around"}>

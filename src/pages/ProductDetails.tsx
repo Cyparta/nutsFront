@@ -20,8 +20,17 @@ export const Info = styled(Box)(({ theme }) => ({
   display: "grid",
   gridTemplateColumns: "200px 1fr",
   fontWeight: 500,
-  fontSize: "20px",
+  fontSize: "18px",
   marginBottom: "24px",
+
+  // Adjust the margin for small screens (max-width 600px)
+  '@media (max-width: 300px)': {
+    gridTemplateColumns: "1fr 1fr",
+  },
+
+  '@media (max-width: 200px)': {
+    display: "block",
+  },
 }));
 
 const ProductDetails = () => {
@@ -108,23 +117,23 @@ const ProductDetails = () => {
               </Typography>
               <Info>
                 <span>PRICE:</span>
-                $7.99
+                <Typography sx={{fontSize:"16px", fontWeight:"500"}}>$7.99</Typography>
               </Info>
               <Info>
                 <span>BRAND:</span>
-                Elite Nuts
+                <Typography sx={{fontSize:"16px", fontWeight:"500"}}>Elite Nuts</Typography>
               </Info>
               <Info>
                 <span>TYPE:</span>
-                Nuts & Seeds
+                <Typography sx={{fontSize:"16px", fontWeight:"500"}}>Nuts & Seeds</Typography>
               </Info>
               <Info>
                 <span>AVAILABILITY:</span>
-                <span style={{ color: status.primary }}>Many In Stock</span>
+                <Typography sx={{fontSize:"16px", fontWeight:"500", color: status.primary}}>Many In Stock</Typography>
               </Info>
               <Info>
                 <span>WEIGHT:</span>
-                <Box sx={{ display: "flex", gap: "17px" }}>
+                <Box sx={{ display: "flex", gap: "17px", flexWrap:"wrap" }}>
                   <Box
                     sx={{
                       border: "1px solid #90B400",

@@ -1,0 +1,1 @@
+export const BASEURL = "https://cyparta-backend-gf7qm.ondigitalocean.app/";
