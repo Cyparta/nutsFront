@@ -30,6 +30,22 @@ export const Info = styled(Box)(({ theme }) => ({
   },
 
 }));
+
+export const InfoGrid = styled(Box)(({ theme }) => ({
+  display: "grid",
+  gridTemplateColumns: "125px 1fr",
+  fontWeight: 500,
+  fontSize: "20px",
+  marginBottom: "24px",
+  alignItems: "center",
+
+  // Adjust the margin for small screens (max-width 600px)
+  '@media (max-width: 600px)': {
+    gridTemplateColumns: "1fr 1fr",
+
+  },
+
+}));
 const Cart = () => {
   const theme = useTheme();
   const { status } = theme;
@@ -113,15 +129,15 @@ const Cart = () => {
 
         <MainCard mt="20px">
           <Box>
-            <Info>
+            <InfoGrid>
               <span>total</span>
               $13.98
-            </Info>
-            <Info>
+            </InfoGrid>
+            <InfoGrid>
               <span>Subtotal</span>
               $13.98
-            </Info>
-            <Stack direction="row" spacing={3}>
+            </InfoGrid>
+            <Stack direction="row" spacing={3} flexWrap={'wrap'} gap={"20px"}>
               <Box>
                 <Typography>Shipping, taxes, and discounts will be calculated at checkout</Typography>
               </Box>

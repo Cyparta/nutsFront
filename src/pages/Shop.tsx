@@ -49,7 +49,7 @@ const Shop = () => {
   const theme = useTheme();
   const { status } = theme;
 
-  const [isGrid, setIsGrid] = useState(false);
+  const [isGrid, setIsGrid] = useState(true);
 
   const [age, setAge] = React.useState("");
 
@@ -80,7 +80,7 @@ const Shop = () => {
                     </Typography>
                   </Box>
                   <Box sx={{ display: "flex", gap: "23px", flexWrap:{xs:"wrap", sm:"nowrap"} }}>
-                    <FormControl fullWidth>
+                    <FormControl fullWidth={false}>
                       <Select
                         labelId="demo-simple-select-label"
                         id="demo-simple-select"
@@ -108,33 +108,15 @@ const Shop = () => {
                         <MenuItem value={30}>Thirty</MenuItem>
                       </Select>
                     </FormControl>
-                    {/* <Box width="250px">
-                      <TextField
-                        value={age}
-                        label=""
-                        select
-                        onChange={handleChange}
-                        placeholder="age"
-                        fullWidth
-                        sx={{ background: status.primary }}
-                      >
-                        <MenuItem disabled value="">
-                          <em>Placeholder</em>
-                        </MenuItem>
-                        <MenuItem value={10}>Ten</MenuItem>
-                        <MenuItem value={20}>Twenty</MenuItem>
-                        <MenuItem value={30}>Thirty</MenuItem>
-                      </TextField>
-                    </Box> */}
                     <Box sx={{ display: "flex", gap: "7px" }}>
-                      <MainButtonHvr sx={{ padding: "5px !important" }} onClick={() => setIsGrid(false)}>
+                      <MainButtonHvr sx={{ padding: "0px !important" }} onClick={() => setIsGrid(false)}>
                         <img
                           src={filterIcon}
                           alt="filter icon"
                           style={{ width: "20%" }}
                         />
                       </MainButtonHvr>
-                      <MainButtonHvr sx={{ padding: "5px !important" }} onClick={() => setIsGrid(true)}>
+                      <MainButtonHvr sx={{ padding: "0px !important" }} onClick={() => setIsGrid(true)}>
                         <img
                           src={menuIcon}
                           alt="meny icon"

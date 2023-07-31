@@ -36,7 +36,7 @@ const Featured = () => {
   const settings = {
     className:"feature",
     speed: 500,
-    slidesToShow: 3,
+    slidesToShow: 4,
     slidesToScroll: 1,
     rows:2,
     infinite: false,
@@ -90,11 +90,11 @@ const Featured = () => {
             flexWrap: "wrap",
           }}
         >
-          <MainButton
+          <MainButtonHvr
             sx={{ padding: "13px 18px !important", borderRadius: "5px" }}
           >
             Featured Products
-          </MainButton>
+          </MainButtonHvr>
           <MainButton
             sx={{
               background: "#F3F3F0 !important",

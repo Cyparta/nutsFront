@@ -15,7 +15,7 @@ const Services = () => {
           <Grid item xs={12} sm={6} md={3}>
             <Box sx={{ textAlign: "center" }}>
               <FruitCard>
-                <img src={servicesImage} alt="NUTS & SNACKS" />
+                <img src={servicesImage} alt="NUTS & SNACKS" style={{height: "75px"}}/>
                 <Typography sx={{ color: "#fff" }}>NUTS & SNACKS</Typography>
               </FruitCard>
             </Box>
@@ -28,7 +28,7 @@ const Services = () => {
                     "linear-gradient(222deg, rgba(248, 120, 3, 0.76) 0%, #E1D800 100%) !important",
                 }}
               >
-                <img src={servicesImage2} alt="COFFEE" />
+                <img src={servicesImage2} alt="COFFEE" style={{height: "75px"}}/>
                 <Typography sx={{ color: "#fff" }}>COFFEE</Typography>
               </FruitCard>
             </Box>
@@ -42,7 +42,7 @@ const Services = () => {
                 }}
               >
                 
-                <img src={servicesImage3} alt="CHOCOLATES & SWEETS" />
+                <img src={servicesImage3} alt="CHOCOLATES & SWEETS" style={{height: "75px"}}/>
                 <Typography sx={{ color: "#fff" }}>
                   CHOCOLATES & <br /> SWEETS
                 </Typography>
@@ -57,7 +57,7 @@ const Services = () => {
                     "linear-gradient(222deg, rgba(205, 0, 86, 0.76) 0%, rgba(248, 120, 3, 0.76) 100%) !important",
                 }}
               >
-                <img src={servicesImage4} alt="TURKISH DELIGHTS" />
+                <img src={servicesImage4} alt="TURKISH DELIGHTS" style={{height: "75px"}}/>
                 <Typography sx={{ color: "#fff" }}>TURKISH DELIGHTS</Typography>
               </FruitCard>
             </Box>
