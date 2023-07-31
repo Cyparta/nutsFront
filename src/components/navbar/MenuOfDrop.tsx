@@ -5,17 +5,21 @@ import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import Menudrop from '../Menudrop';
 import { stylelistclass } from '../../style/navbar';
 import { imagechocolates, imagenuts, imageturkeish } from '../../data/navlink';
+import { useNavigate } from 'react-router-dom';
 
 interface propsmenu{
     name:string,onClick?:()=>{},objectData:any
 }
 function MenuOfDrop({name,objectData}:propsmenu) {
+  let navigate=useNavigate()
     const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
     const open = Boolean(anchorEl);
     const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
       setAnchorEl(event.currentTarget);
     };
-    const handleClose = () => {
+    const handleClose = (e: any,name:string) => {
+      console.log(e.target,name)
+      navigate(`/shop/${name}`)
       setAnchorEl(null);
     };
   
@@ -62,7 +66,7 @@ function MenuOfDrop({name,objectData}:propsmenu) {
       return <Box sx={{color:"#90B400",padding:"20px"}} key={key}> {ele}
        
        {objectData[ele].map((elem:any)=>{
-        return <MenuItem onClick={handleClose} sx={{color:"black",fontWeight:"500",width:"25%"}}>{elem.title}</MenuItem>
+        return <MenuItem   onClick={(e)=>handleClose(e,elem.href)} sx={{color:"black",fontWeight:"500",width:"25%"}}>{elem.title}</MenuItem>
        })}
        </Box>
 
@@ -97,7 +101,7 @@ function MenuOfDrop({name,objectData}:propsmenu) {
       return <Box sx={{color:"#90B400",padding:"20px"}}key={key}> {ele}
        
        {objectData[ele].map((elem:any)=>{
-        return <MenuItem onClick={handleClose} sx={{color:"black",fontWeight:"500",width:"25%"}}>{elem.title}</MenuItem>
+        return <MenuItem onClick={(e)=>handleClose(e,elem.href)} sx={{color:"black",fontWeight:"500",width:"25%"}}>{elem.title}</MenuItem>
        })}
        </Box>
 
@@ -135,7 +139,7 @@ function MenuOfDrop({name,objectData}:propsmenu) {
       return <Box sx={{color:"#90B400",padding:"20px"}} key={key}> {ele}
        
        {objectData[ele].map((elem:any)=>{
-        return <MenuItem onClick={handleClose} sx={{color:"black",fontWeight:"500",width:"25%"}}>{elem.title}</MenuItem>
+        return <MenuItem onClick={(e)=>handleClose(e,elem.href)} sx={{color:"black",fontWeight:"500",width:"25%"}}>{elem.title}</MenuItem>
        })}
        </Box>
 

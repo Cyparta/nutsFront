@@ -13,9 +13,9 @@ import Slider from 'react-slick'
 // import Detailofimage from './Detailofimage'
 
 function Reviewcandy() {
-   let review=useSelector((state:any)=>state.reviewnuts.value)
+   let review=useSelector((state:any)=>state.reviewnuts.card)
    const settings = {
-    dots: true,
+    dots: false,
     infinite: true,
     speed: 500,
     slidesToShow: 1,
@@ -25,53 +25,46 @@ function Reviewcandy() {
     // let controls = useAnimation()
     const reftoimage = useRef<HTMLImageElement|null>(null);
     const [click,setclick]=useState(false)
-    function clicktoreviewdetail(event: React.MouseEvent<HTMLImageElement>,i:number){
-        // if(i==0){
-            // controls.start({
-           
-            //     x: "",
-            //     width:"200%",
-            //     opacity: 1,
-            //     // zIndex: 1,
-            //     transition: { duration: 0.3},
-            //   });
-        // }else if (i==1){
 
-        // }
-        setclick(!click)
-    }
-   useEffect(()=>{
-    console.log(review)
-   },[])
+  
+   
   return (
     <Container sx={{marginY:"10px"}}>
     <MainCard sx={{position:"relative",justifyContent:"flex-end",alignItems:"center",display:{sm:"none",xs:"none",md:"flex"}}}>
        
        {detailofimgnut.map((ele,i,array)=>{
-        return      <Eachanimtion image={i===0?array[4].image:ele.id!==4?ele.image:""} index={i} ele={i===0?array[4]:ele.id!==4?ele:null} />
+        return  <Eachanimtion image={i===0?array[4].image:ele.id!==4?ele.image:""} index={i} ele={i===0?array[4]:ele.id!==4?ele:null} />
        })}
       <Detailofimage ele={review?review:detailofimgnut[0]}/>
     </MainCard>
-    <Card sx={{backgroundColor:""}}>
+    <Card sx={{display:{sm:"block",xs:"block",md:"none"},backgroundColor:"#F5F5F5",border:"none",marginBottom: "67px"}}>
        <Slider {...settings}>
         {/* <Box sx={{backgroundColor:theme.palette?.primary.}}>
         </Box> */}
       
         {detailofimgnut.map((ele)=>{
           return <CardContent sx={{display:"flex"}}>
+            <Stack direction={"column"} justifyContent={"space-between"} alignItems={"center"}>
            <CardMedia
         component="img"
-        height="50"
-        width="20"
+        height="150"
+        
         image={ele.image}
         alt="Paella dish"
+          sx={{objectFit: "contain",width:"auto"}}
       />
-             <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
+          <Box>
+             <Typography sx={{ fontSize: 20,fontWeight:"bold" }} color="text.secondary" gutterBottom>
           {ele.title}
         </Typography>
         <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
           {ele.detail}
         </Typography>
+        <Button size="small" color="primary">
+        Share
+      </Button>
+        </Box>
+        </Stack>
           </CardContent>
         })}
        </Slider></Card>

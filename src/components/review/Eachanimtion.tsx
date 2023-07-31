@@ -3,6 +3,7 @@ import { motion as m, useAnimation } from "framer-motion";
 import { Stack } from '@mui/material';
 import Detailofimage from './Detailofimage';
 import { useDispatch, useSelector } from 'react-redux';
+import { detailofimgnut } from '../../data/navlink';
 interface Eachanimtionprops{
     image:string|undefined,index:number,ele:{
         id: number;
@@ -14,15 +15,22 @@ interface Eachanimtionprops{
 function Eachanimtion({image,index,ele}:Eachanimtionprops) {
     let controls = useAnimation();
     let dispatch=useDispatch()
+    let [checkkick,setcheck]=useState(false)
+  
     const reftoimage = useRef<HTMLImageElement|null>(null);
     let cardImage=useSelector((state:any)=>state.reviewnuts.card)
     function clicktoreviewdetail(event: React.MouseEvent<HTMLImageElement>,i:number){
+      setcheck(!checkkick)
         if(index==0){
             controls.start({
                 opacity: 0,
               }).then(()=>{
-                dispatch({type:"selectimageslice/set",payload:ele})
-                reftoimage.current?.setAttribute("src",cardImage.image)
+                const url=(event.target as HTMLImageElement).src
+                const newUrl = url.replace("http://localhost:3000", "");
+               const newtarget= detailofimgnut.find((elem)=>{return elem.image==newUrl})
+               reftoimage.current?.setAttribute("src",cardImage.image)
+                  dispatch({type:"selectimageslice/dataCard",payload:newtarget})
+                
     
                 controls.start({
                   x: 0, y:0,opacity: 1 ,width:"7%"
@@ -30,13 +38,17 @@ function Eachanimtion({image,index,ele}:Eachanimtionprops) {
               })
         }else if (index==1){
           controls.start({
-            x: 210,
-            width:"30%",
-            y:-75,
+            x: "52%",
+            width:"24%",
+            y:"-28%",
             opacity: 1,
           }).then(()=>{
-            dispatch({type:"selectimageslice/set",payload:ele})
-            reftoimage.current?.setAttribute("src",cardImage.image)
+            const url=(event.target as HTMLImageElement).src
+                const newUrl = url.replace("http://localhost:3000", "");
+               const newtarget= detailofimgnut.find((elem)=>{return elem.image==newUrl})
+               reftoimage.current?.setAttribute("src",cardImage.image)
+                  dispatch({type:"selectimageslice/dataCard",payload:newtarget})
+                
 
             controls.start({
               x: 0, y:0,opacity: 1 ,width:"7%"
@@ -46,8 +58,12 @@ function Eachanimtion({image,index,ele}:Eachanimtionprops) {
           controls.start({
             opacity: 0,
           }).then(()=>{
-            dispatch({type:"selectimageslice/set",payload:ele})
-            reftoimage.current?.setAttribute("src",cardImage.image)
+            const url=(event.target as HTMLImageElement).src
+            const newUrl = url.replace("http://localhost:3000", "");
+           const newtarget= detailofimgnut.find((elem)=>{return elem.image==newUrl})
+           reftoimage.current?.setAttribute("src",cardImage.image)
+              dispatch({type:"selectimageslice/dataCard",payload:newtarget})
+            
 
             controls.start({
               x: 0, y:0,opacity: 1 ,width:"7%"
@@ -57,8 +73,12 @@ function Eachanimtion({image,index,ele}:Eachanimtionprops) {
           controls.start({
             opacity: 0
           }).then(()=>{
-            dispatch({type:"selectimageslice/set",payload:ele})
-            reftoimage.current?.setAttribute("src",cardImage.image)
+            const url=(event.target as HTMLImageElement).src
+                const newUrl = url.replace("http://localhost:3000", "");
+               const newtarget= detailofimgnut.find((elem)=>{return elem.image==newUrl})
+               reftoimage.current?.setAttribute("src",cardImage.image)
+                  dispatch({type:"selectimageslice/dataCard",payload:newtarget})
+                
 
             controls.start({
               x: 0, y:0,opacity: 1 ,width:"7%"
