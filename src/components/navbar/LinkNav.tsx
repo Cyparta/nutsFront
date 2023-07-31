@@ -33,12 +33,15 @@ function LinkNav() {
                    return <MenuOfDrop name={ele.name} objectData={nutsandsnacks}></MenuOfDrop>
 
                }else if(ele.href==="turkish"){
-                   return <MenuOfDrop name={ele.name}objectData={turkeish}></MenuOfDrop>
+                   return <MenuOfDrop name={ele.name} objectData={turkeish}></MenuOfDrop>
                }else if(ele.href==="chocolates"){
-                   return <MenuOfDrop name={ele.name}objectData={chocolates}></MenuOfDrop>
+                   return <MenuOfDrop name={ele.name} objectData={chocolates}></MenuOfDrop>
                }
+           }else if(ele.href!=="home"){
+               return <Link to={`/shop/${ele.href}`} onClick={()=>setAActive(index)}  className={active===index?"active":""}>{ele.name}</Link>
            }else{
-               return <Link to={ele.href}onClick={()=>setAActive(index)}  className={active===index?"active":""}>{ele.name}</Link>
+            return <Link to={`/`} onClick={()=>setAActive(index)}  className={active===index?"active":""}>{ele.name}</Link>
+
            }
        })}
       

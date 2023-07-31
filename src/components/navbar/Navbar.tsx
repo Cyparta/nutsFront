@@ -7,7 +7,7 @@ import SearchIcon from '@mui/icons-material/Search';
 import  img from "../../assets/Basket (2).png"
 import user from "../../assets/user-1.png"
 import { stylenav } from "./navbarstyle";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 import loginicon  from "../../assets/shapeblock.png"
 import backiconlogin from "../../assets/shapelogin.png"
@@ -16,10 +16,14 @@ import Menudrop from "../Menudrop";
 import imagelogo from "../../assets/logos/logoelitenuts.png"
 function Navbar() {
   const theme=useTheme()
+  let navigate=useNavigate()
   // const theme = useTheme();
   const matches = useMediaQuery(theme.breakpoints.up('md'));
   const [open,setOpen]=useState<Boolean>(false)
   const buttontouch :React.MutableRefObject<any>= useRef()
+  const loginpart :React.MutableRefObject<any>= useRef()
+  const createaccount :React.MutableRefObject<any>= useRef()
+
   const Search = styled('div')(({ theme }) => ({
     position: 'relative',
     borderRadius: theme.shape.borderRadius,
@@ -80,36 +84,36 @@ function Navbar() {
               inputProps={{ 'aria-label': 'search' }}
             />
           </Search>
-          <Stack direction={"row"} justifyContent={"flex-end"}sx={{width:"100%"}} >
+          <Stack direction={"row"} justifyContent={"center"}sx={{width:"36%"}} >
           <Box sx={Object.assign(stylenav,{img:{
-            margin:"10px",display:{
+            margin:"7px",display:{
               sm:"none",md:'block'
             }
-          }})}>
+          }})} onClick={()=>navigate("/cart")}>
             <img src={img} alt="logo"/>
           </Box>
           <Box sx={Object.assign(stylenav,{position:"relation"})}>
             
             <Box sx={Object.assign(stylenav,{color:theme.palette.primary.main,cursor:"pointer",img:{
-              margin:"10px",
+              margin:"7px",
              
             }})} onClick={()=>{setOpen(!open)}} ref={buttontouch}>
-            <img src={user} alt="" onClick={()=>buttontouch.current.click()}/>
+            <img src={user} alt="" />
             {/* {`theme.breakpoints.up('sm') matches: ${matches}`} */}
             {matches?"Register":""}
               
             </Box>
         
             <Menudrop open={open} >
-            <Box sx={stylenav}>
+            <Box sx={stylenav} onClick={()=>navigate("/login")}>
             <img src={loginicon} alt=""/>
-              <Link to={"login"}>
+              <Link to="/login" >
                 Login
               </Link>
             </Box>
-            <Box sx={stylenav}>
-            <img src={backiconlogin} alt=""/>
-              <Link to={"profile"}>
+            <Box sx={stylenav} onClick={()=>navigate("/sign")}>
+            <img src={backiconlogin} alt=""onClick={()=>createaccount.current.click()}/>
+              <Link to="/sign" >
                 Create Account
               </Link>
             </Box>
@@ -118,7 +122,7 @@ function Navbar() {
             
             </Box>
             <Box sx={stylenav}>
-              <img src={phoneimage} alt={"phoneimage"}/>
+              <img src={phoneimage} alt={"phoneimage"} />
               {matches?<a>
               + 1 (708) 770 - 4845</a>:""}
               

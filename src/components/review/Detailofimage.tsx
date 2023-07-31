@@ -14,10 +14,12 @@ function Detailofimage({ele}:PropsDetail) {
   },[ele])
  
   return (
-    <Card sx={{ maxWidth: "80%",".MuiCard-root":{
+    <Card sx={{ maxWidth: "85%",".MuiCard-root":{
         
     },backgroundColor:"transparent",boxShadow:"none"}}>
-    <CardContent sx={{display:"flex",justifyContent:"center",alignItems:"center" }}>
+    <CardContent sx={{display:"flex",justifyContent:"center",alignItems:"center",".MuiCardMedia-root":{
+          width:"60% !important"
+        } }}>
       <CardMedia
         component="img"
         height="342"

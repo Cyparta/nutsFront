@@ -10,7 +10,7 @@ function Menudrop({children,open}:any) {
       },
       position: "absolute",
       top: "10%",
-      left: "68%",
+      left: "75%",
       display:open===true?"flex":"none",
       boxShadow: '0px 4px 4px 0px #00000040'
 
