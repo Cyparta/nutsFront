@@ -3,11 +3,13 @@ import { createStore } from "redux";
 import { configureStore } from "@reduxjs/toolkit";
 import  SelectImageSlice  from "./reducer/Createnuts";
 import UserSlice  from "./reducer/User";
+import ProductID from "./reducer/ProductID";
 
 const store = configureStore({
     reducer: {
      reviewnuts:SelectImageSlice,
-     user: UserSlice
+     user: UserSlice,
+     productID: ProductID
     },
   });
 

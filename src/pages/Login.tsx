@@ -35,9 +35,8 @@ const Login = () => {
     onSubmit: (values) => {
         const { email, password } = values;
         dispatch(RequestPostLogin({ email, password })).then((req) => {{
-            console.log(typeof req.payload.data.token)
-            localStorage.setItem("token", req.payload.data.token)
             if (req.type == "RequestPostLogin/fulfilled") {
+              localStorage.setItem("token", req.payload.data.token)
                 setTimeout(() => {
                   navigate("/");
                     // router.push("/blog");
