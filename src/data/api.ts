@@ -1,1 +1,2 @@
-export const BASEURL = "https://cyparta-backend-gf7qm.ondigitalocean.app/";
+export const BASEURL = "https://api.floridahalalmeat.com/";
+// export const URLLOGIN = "https://api.floridahalalmeat.com/";

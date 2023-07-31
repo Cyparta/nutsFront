@@ -1,4 +1,4 @@
-import React, {useRef} from "react";
+import React, {useRef, useEffect} from "react";
 import Layout from "../components/layout/Layout";
 import { Box, Grid, Container, Typography } from "@mui/material";
 import productImage from "../assets/product/product-1.webp";
@@ -15,6 +15,9 @@ import DialogCart from "../components/common/DialogCart";
 
 import NavigateNextIcon from "@mui/icons-material/NavigateNext";
 import NavigateBeforeIcon from "@mui/icons-material/NavigateBefore";
+import { useDispatch, useSelector } from "react-redux";
+import { AppDispatch, RootState } from "../store";
+import { RequestGetProductID } from "../reducer/ProductID";
 
 export const Info = styled(Box)(({ theme }) => ({
   display: "grid",
@@ -35,6 +38,8 @@ export const Info = styled(Box)(({ theme }) => ({
 
 const ProductDetails = () => {
   const theme = useTheme();
+  const dispatch = useDispatch<AppDispatch>()
+  const {item} = useSelector((state:RootState) => state.productID)
   const { status } = theme;
 
   const [open, setOpen] = React.useState(false);
@@ -92,6 +97,10 @@ const ProductDetails = () => {
       arrowRef.current.slickNext();
     }
   };
+
+  useEffect(() => {
+    dispatch(RequestGetProductID())
+  }, [])
 
   return (
     <Layout>
