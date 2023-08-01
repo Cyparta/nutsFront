@@ -2,18 +2,19 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import type { PayloadAction } from "@reduxjs/toolkit";
 
 import axios from "axios";
+import { BASEURL } from "../data/api";
 
 const getLocalStoarge = () => {
     const result = localStorage.getItem("token");
-    const user = result ? JSON.parse(result) : null;
+    const user = result ? result : null;
     return user;
-  };
+};
 
 export interface UserState {
   loading: boolean;
   error: boolean;
   user: any;
-  errorMsg: String;
+  errorMsg: any;
 }
 
 const initialState: UserState = {
@@ -28,7 +29,7 @@ export const RequestPostRegister = createAsyncThunk(
   async (data: any, ThunkApi) => {
     try {
       const response = await axios.post(
-        `https://cyparta-backend-gf7qm.ondigitalocean.app/api/register/`,
+        `${BASEURL}auth/users/`,
         {
           ...data,
         }
@@ -45,7 +46,7 @@ export const RequestPostLogin = createAsyncThunk(
   async (data: { email: string; password: string }, ThunkApi) => {
     try {
       const response = await axios.post(
-        `https://cyparta-backend-gf7qm.ondigitalocean.app/api/login/`,
+        `${BASEURL}/auth/jwt/create/`,
         {
           ...data,
         }
